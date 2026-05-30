@@ -11,7 +11,6 @@ consistent dict structure.  Adding a sixth tool means:
 
 import json
 import uuid
-import sys
 from pathlib import Path
 from datetime import datetime
 
@@ -20,9 +19,8 @@ import pandas as pd
 # ─────────────────────────────────────────────────────────────────────────────
 # Paths — resolve relative to this file so the tools work from any cwd
 # ─────────────────────────────────────────────────────────────────────────────
-_HERE    = Path(__file__).parent
-_ROOT    = _HERE.parent
-_DATA    = _ROOT / "results" / "cleaned_data.csv"
+_HERE     = Path(__file__).parent
+_DATA     = _HERE / "results" / "cleaned_data.csv"
 _LOG_FILE = _HERE / "results" / "interaction_log.jsonl"
 _ESC_FILE = _HERE / "results" / "escalation_log.jsonl"
 
@@ -45,7 +43,6 @@ except Exception:
 # ── Load predict_churn from Part 1 (graceful mock fallback) ──────────────────
 _REAL_MODEL = False
 try:
-    sys.path.insert(0, str(_ROOT))
     from predict_churn import predict_churn as _real_predict_churn
     _REAL_MODEL = True
 except Exception:

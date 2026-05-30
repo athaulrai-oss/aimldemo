@@ -1,5 +1,4 @@
 import sys, os
-sys.path.insert(0, 'part2')
 
 api_key = os.environ.get('GROQ_API_KEY', '')
 if not api_key:
