@@ -262,10 +262,11 @@ with col_trace:
                         # Special rendering for key fields
                         if "risk_tier" in out:
                             tier = out["risk_tier"]
-                            prob = out.get("churn_probability", "?")
+                            prob = out.get("churn_probability")
+                            prob_str = f"({prob:.0%})" if isinstance(prob, (int, float)) else ""
                             st.markdown(
                                 f"Risk: <span class='risk-{tier}'>{tier.upper()}</span> "
-                                f"({prob:.0%})",
+                                f"{prob_str}",
                                 unsafe_allow_html=True
                             )
                         if "offers" in out and out["offers"]:
