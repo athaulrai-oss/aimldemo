@@ -1,0 +1,18 @@
+Column,Raw Missing/Invalid,After Cleaning
+customer_id,0,0
+age,9,0
+gender,41,0
+tenure_months,6,0
+contract_type,0,0
+monthly_charges,11,0
+total_charges,17,0
+internet_service,349,0
+phone_service,1,0
+avg_monthly_gb_used,12,0
+num_support_tickets,1,0
+avg_monthly_minutes,54,0
+satisfaction_score,15,0
+payment_method,19,0
+num_additional_services,1,0
+last_interaction_date,1,0
+churned,1,0

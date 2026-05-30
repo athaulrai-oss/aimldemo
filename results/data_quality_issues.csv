@@ -1,0 +1,15 @@
+Column,Issue Type,Rows Affected,Cleaning Strategy
+customer_id,Duplicate rows,25,"Keep first occurrence, drop rest"
+age,Blank / unparseable values,9,pd.to_numeric coerce → group-median imputation
+age,Sentinel 18 (minimum-age placeholder),170,Null out exact-int 18 (irrecoverable from truncation) → group-median imputation
+age,Out-of-range (<18 or >100),14,"Clip to [18, 100]"
+gender,Inconsistent encodings (Male/male/M/F/MALE/Other),109,Normalise → Male/Female; unknown → NaN → mode imputation
+phone_service,Inconsistent encodings (Y/N/yes/no),1,Normalise → Yes/No → mode imputation
+internet_service,'fiber' vs 'Fiber optic'; 'None'/'No' both mean no internet,344,Normalise → DSL / Fiber optic / No internet
+payment_method,BT/CC abbreviations + mixed casing,19,Normalise to canonical title-case values
+satisfaction_score,Out-of-range values (> 10 or < 0),100,"Clip to [0, 10]"
+avg_monthly_gb_used,Negative usage values (physically impossible),10,Null out negatives → median imputation
+total_charges,total_charges << monthly_charges × tenure (data-entry error),14,Null anomalous rows → group-median imputation
+avg_monthly_minutes,Missing / blank values,54,Median imputation
+last_interaction_date,Unparseable date strings,1,Coerce → NaT; days_since_contact filled via median
+churned,Missing/unparseable target values,1,Drop rows — cannot impute the label

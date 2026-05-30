@@ -1,0 +1,16 @@
+Feature,Metric,Score
+contract_type,Cramér's V,0.2979
+satisfaction_score,Point-biserial |r|,0.1234
+tenure_months,Point-biserial |r|,0.0924
+total_charges,Point-biserial |r|,0.0476
+internet_service,Cramér's V,0.0345
+gender,Cramér's V,0.0249
+avg_monthly_gb_used,Point-biserial |r|,0.0237
+monthly_charges,Point-biserial |r|,0.0221
+days_since_contact,Point-biserial |r|,0.0201
+phone_service,Cramér's V,0.0146
+age,Point-biserial |r|,0.0107
+payment_method,Cramér's V,0.0105
+num_additional_services,Point-biserial |r|,0.0098
+avg_monthly_minutes,Point-biserial |r|,0.0062
+num_support_tickets,Point-biserial |r|,0.0044
